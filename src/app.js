@@ -1,11 +1,17 @@
 const express = require("express")
 const app = express()
-app.use("/",(req,res)=>{
-    res.send("Namastee")
-});
-app.use("/hello",(req,res)=>{
-    res.send("helloo")
+app.get("/info",(req,res)=>{
+    res.send({
+        firstName:"Dvraj",
+        lastName:"Makwana"
+    })
 })
-app.listen(3333,()=>{
+app.post("/info",(req,res)=>{
+    res.send("Data fetched succussfullyy")
+})
+app.delete("/info",(req,res)=>{
+    res.send("Deleted the data successfully")
+})
+app.listen(4444,()=>{
     console.log("Server Started Successfullyy")
 })
